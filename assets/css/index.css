@@ -113,7 +113,7 @@ button {
 .nav__item svg {
     position: absolute;
     right: 0;
-    top: 50%;
+    top: 10p;
 }
 
 .nav__link {

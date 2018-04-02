@@ -9,8 +9,7 @@ if(menuButton) {
 
 const navButtons = document.querySelectorAll('[data-toggle="open-submenu"]');
 navButtons.forEach(navButton => {
-    console.log(window.innerWidth);
-    if(window.innerWidth < 800) {
+    if($(window).width() < 800) {
         navButton.addEventListener('click', () => {
             const submenus = document.querySelectorAll('.submenu');
             const submenu = navButton.parentElement.querySelector('.submenu');
