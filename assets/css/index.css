@@ -256,6 +256,7 @@ button {
 
 .price {
     position: relative;
+    margin-left: 20px;
 }
 
 .price img {
@@ -269,7 +270,7 @@ button {
     bottom: 0;
     padding: 20px;
     background-color: rgba(61, 148, 48, 0.3);
-    width: 100%;
+    width: calc(100% - 10px);
     text-align: center;
     color: #ffffff
 }
@@ -481,7 +482,7 @@ button {
 
 .map {
     margin-top: 20px;
-    height: 80vh;
+    min-height: 80vh;
 }
 
 .map__title {
@@ -497,20 +498,6 @@ button {
 .gridder-expanded-content img {
     width: 100%;
 }
-
-.gridder-close {
-
-}
-
-
-.next {
-
-}
-
-.prev {
-
-}
-
 
 .relaxation h1 {
     text-align: center;
@@ -562,16 +549,13 @@ button {
     .price {
         width: 25%;
         padding: 5px;
+        margin-left: 0;
     }
 
-    .price span {
-        bottom: 5px;
-        width: calc(100% - 10px);
-    }
+
 
     .screen {
-        /*min-height: 80vh;*/
-        height: 80vh;
+        min-height: 80vh;
         width: 100%;
         padding: 0;
 
@@ -586,7 +570,7 @@ button {
     }
 
     .screen__image {
-        height: 80vh;
+        min-height: 80vh;
     }
 
     .image-three {
@@ -793,8 +777,13 @@ button {
 
     }
 
+    .price span {
+        padding: 20px;
+        bottom: 5px;
+    }
+
     .screen {
-        height: 80vh;
+        min-height: 80vh;
         width: 100%;
         padding: 35px 50px 0 50px;
     }
@@ -880,7 +869,7 @@ button {
     .contact > div {
         margin-top: 50px;
         padding: 0 60px;
-        height: 80vh;
+        min-height: 80vh;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-areas:
@@ -1015,9 +1004,8 @@ button {
 
 @media(min-width: 1200px) {
     .main-header__title img {
-        width: 60%;
-        height: 200px;
-
+        width: 50%;
+        height: 190px;
     }
 
     .screen {

@@ -65,7 +65,8 @@ $('.booking-tab').tabSlideOut({
 const slider = $('.slider');
 if(slider.length !== 0) {
     slider.pgwSlider({
-        displayControls: true
+        displayControls: true,
+        maxHeight: 700
     });
 }
 
@@ -73,7 +74,8 @@ const sliderFull = $('.slider-full');
 if(sliderFull.length !== 0) {
     sliderFull.pgwSlider({
         displayList: false,
-        displayControls: true
+        displayControls: true,
+        maxHeight: 700
     });
 }
 
