@@ -113,7 +113,7 @@ button {
 .nav__item svg {
     position: absolute;
     right: 0;
-    top: 10p;
+    top: 10px;
 }
 
 .nav__link {
@@ -497,6 +497,20 @@ button {
 .gridder-expanded-content img {
     width: 100%;
 }
+
+.gridder-close {
+
+}
+
+
+.next {
+
+}
+
+.prev {
+
+}
+
 
 .relaxation h1 {
     text-align: center;
