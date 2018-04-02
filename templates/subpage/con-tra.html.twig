@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block css %}
+{% endblock %}
+
+{% block body %}
+    <main class="container con-tra">
+        <h1>Konferencje i szkolenia</h1>
+        <section id="training" class="training">
+            <p>Dla tych, którzy szukają miejsca w celu zorganizowania profesjonalnych mitingów biznesowych w zacisznym stylu, służbowych spotkań, szkoleń i konferencji, posiedzeń zarządu oferujemy naszą klimatyzowaną salę konferencyjną wraz z obsługą techniczną. Otaczający krajobraz stanowi niepowtarzalną enklawę ciszy i spokoju co pozytywnie wpływa na przebieg organizowanych spotkań i imprez.</p>
+            <h2>Szkolenia</h2>
+            <p>Klimatyzowana sala pozwala na organizowanie spotkań dla 40 osób w ustawieniu teatralnym (także jodełka), do 30 osób w ustawieniu szkolnym (także w kształcie litery "u") oraz do 20 osób w ustawieniu centralnym. Do dyspozycji oddajemy pełne wyposażenie konferencyjne: ekran, flipchart, rzutnik multimedialny oraz bezprzewodowy, stały dostęp do Internetu.</p>
+            <h3>Rodzaje ustawień:</h3>
+            <div class="training__img-box img-thumbnail">
+                <img src="{{ asset('build/img/teatralne.png') }}" class="img-thumbnail">
+                <img src="{{ asset('build/img/jodelka.png') }}" class="img-thumbnail">
+                <img src="{{ asset('build/img/teatralne.png') }}" class="img-thumbnail">
+                <img src="{{ asset('build/img/szkola.png') }}" class="img-thumbnail">
+                <img src="{{ asset('build/img/u.png') }}" class="img-thumbnail">
+            </div>
+        </section>
+        <section id="conferences" class="conferences">
+            <h2>Konferencje/Bankiety</h2>
+            <p>Na większe spotkania udostępniamy salę restauracyjną (ok. 200 osób w ustawieniu teatralnym). Możliwość ustawienia w formie rzędowej bądź bankietowej.</p>
+            <h3>Rodzaje ustawień:</h3>
+            <div class="conferences__img-box">
+                <img src="{{ asset('build/img/teatralne.png') }}" class="img-thumbnail">
+                <img src="{{ asset('build/img/rzedy.png') }}" class="img-thumbnail">
+                <img src="{{ asset('build/img/bankiet.png') }}" class="img-thumbnail">
+            </div>
+            <p>Organizujemy również kameralne spotkania firmowe, przy obiedzie lub kolacji. Podczas przerw w trakcie konferencji możliwość korzystania z tarasu w sezonie wiosenno-letnim.</p>
+            <p>Na życzenie organizujemy lunch oraz zimne napoje i przekąski podczas trwania konferencji (wg specjalnie opracowanego menu).</p>
+            <p>Inną ofertą, jaką kierujemy do firm są: koktajle firmowe, bankiety oraz spotkania i pikniki integracyjne</p>
+        </section>
+    </main>
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+
+
+
+

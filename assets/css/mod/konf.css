@@ -1,0 +1,44 @@
+.con-tra {
+    font-size: 1rem;
+}
+
+.conferences, .training {
+    margin-left: 30px;
+}
+
+.con-tra h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.con-tra p {
+    margin-bottom: 20px;
+}
+
+.con-tra h2 {
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.training__img-box, .conferences__img-box {
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.con-tra img {
+    width: 60px;
+    border: 1px solid #000;
+    margin: 2px;
+    height: 60px;
+    display: block;
+}
+
+@media(min-width: 768px) {
+    .con-tra img {
+        width: 120px;
+        height: 120px;
+    }
+}

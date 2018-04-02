@@ -1,0 +1,132 @@
+<!Doctype html>
+<html lang="">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&amp;subset=latin-ext" rel="stylesheet">
+        {#<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">#}
+        <link rel="stylesheet" href="{{ asset('build/index.css') }}">
+        {% block css %}{% endblock %}
+    </head>
+    <body>
+    {% block header %}
+        <header class="header">
+            <nav class="header__nav nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="{{ path('home') }}" class="nav__link">Strona główna</a>
+                    </li>
+                    <li class="nav__item">
+                        <button class="nav__link" data-toggle="open-submenu">Hotel <span class="fas fa-arrow-down"></span></button>
+                        <ul class="nav__submenu submenu">
+                            <li class="submenu__item">
+                                <a href="https://goo.gl/maps/c1RLkEvmjH62" target="_blank" class="submenu__link">Spacer po hotelu</a>
+                            </li>
+                            <li class="submenu__item">
+                                <a href="{{ path('environment') }}" class="submenu__link">Okolica</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Ceny</a>
+                    </li>
+                    <li class="nav__item">
+                        <button class="nav__link" data-toggle="open-submenu">Relaks <span class="fas fa-arrow-down"></span></button>
+                        <ul class="nav__submenu submenu">
+                            <li class="submenu__item">
+                                <a href="{{ path('relaxation') }}#Sauna" class="submenu__link">Sauna</a>
+                            </li>
+                            <li class="submenu__item">
+                                <a href="{{ path('relaxation') }}#Siłownia" class="submenu__link">Siłownia</a>
+                            </li>
+                            <li class="submenu__item">
+                                <a href="{{ path('relaxation') }}#Bilard" class="submenu__link">Bilard</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav__item">
+                        <button class="nav__link" data-toggle="open-submenu">Konferencje <span>&</span> szkolenia <span class="fas fa-arrow-down"></span></button>
+                        <ul class="nav__submenu submenu">
+                            <li class="submenu__item">
+                                <a href="{{ path('con-tra') }}#training" class="submenu__link">Konferencje</a>
+                            </li>
+                            <li class="submenu__item">
+                                <a href="{{ path('con-tra') }}#conferences" class="submenu__link">Szkolenia</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav__item">
+                        <a href="{{ path('gallery') }}" class="nav__link">Galeria</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="{{ path('home') }}#contact" class="nav__link">Kontakt</a>
+                    </li>
+                    <div class="arrow-indicator"></div>
+                </ul>
+            </nav>
+            <nav class="header__nav-mobile nav-mobile">
+                <ul class="nav-mobile__list">
+                    <li class="nav-mobile__item">
+                        <button class="nav-mobile__link">
+                            <span class="fas fa-envelope"></span>
+                            <span>Kontakt</span>
+                        </button>
+                    </li>
+                    <li class="nav-mobile__item">
+                        <button class="nav-mobile__link">
+                            <span class="fas fa-map"></span>
+                            <span>Mapa</span>
+                        </button>
+                    </li>
+                    <li class="nav-mobile__item">
+                        <a href="#" class="nav-mobile__link">
+                            <span class="fas fa-street-view"></span>
+                            <span>Spacer</span>
+                        </a>
+                    </li>
+                    <li class="nav-mobile__item">
+                        <button class="nav-mobile__link menu-button">
+                            <span class="fas fa-bars"></span>
+                            <span>Menu</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <aside class="tab">
+            <div class="booking-tab">
+                <a href="#" class="handle">Zarezerwuj</a>
+            </div>
+            <div class="fb-tab">
+                <span class="handle">Facebook</span>
+                <iframe class="fb-iframe" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FGo%25C5%259Bciniec-Europejski-158126337621209%2F&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=1548820838530942" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+            </div>
+        </aside>
+    {% endblock %}
+
+    {% block body %}{% endblock %}
+
+    {% block footer %}
+        <footer class="footer">
+            <h3 class="footer__title">Gościniec Europejski - 2018 &copy; Wszelkie prawa zastrzeżone</h3>
+            <p class="footer__subtitle">Projekt pn. "Budowa, adaptacja i uruchomienie nowoczesnego budynku usługowego z częścią gastronomiczną i noclegową"</p>
+            <p class="footer__text">Jest współfinansowany z Europejskiego Funduszu Rozwoju Regionalnego i budżetu państwa w ramach Regionalnego Programu Operacyjnego Województwa Świętokrzyskiego na lata 2007-2013</p>
+            <a href="http://www.rpo-swietokrzyskie.pl" class="footer__img" target="_blank"><img src="{{ asset('build/img/eu.png') }}"></a>
+        </footer>
+    {% endblock %}
+        <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <script src="{{ asset('build/lib/pgwslider.min.js') }}"></script>
+        <script src="{{ asset('build/lib/jquery.waypoints.min.js') }}"></script>
+        <script src="{{ asset('build/lib/jquery.tabSlideOut.js') }}"></script>
+        <script src="{{ asset('build/lib/jquery.gridder.min.js') }}"></script>
+
+        <script src="{{ asset('build/index.js') }}"></script>
+        {% block js %}{% endblock %}
+    </body>
+</html>

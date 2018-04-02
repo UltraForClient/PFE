@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block css %}
+{% endblock %}
+
+{% block body %}
+    <main class="container relaxation">
+        <h1>Relaks</h1>
+        {% for relax in relaxs %}
+            <section id="{{ relax.title }}">
+                <h2>{{ relax.title }}</h2>
+                <p>{{ relax.text }}</p>
+                <ul class="slider-full">
+                {% for key, slider in relax.sliders %}
+                    <li><img src="{{ vich_uploader_asset(slider, 'imageFile') }}" alt="{{ slider.alt }}"></li>
+                {% endfor %}
+                </ul>
+                <div style="clear: both;"></div>
+            </section>
+        {% endfor %}
+    </main>
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+
+
+
+

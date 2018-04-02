@@ -1,0 +1,29 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        first_section_images:
+            uri_prefix: '%app.path.images%/first_section'
+            upload_destination: '%kernel.root_dir%/../public/uploads/images/first_section'
+        header_background_images:
+            uri_prefix: '%app.path.images%/header_background'
+            upload_destination: '%kernel.root_dir%/../public/uploads/images/header_background'
+        header_title_images:
+            uri_prefix: '%app.path.images%/header_title'
+            upload_destination: '%kernel.root_dir%/../public/uploads/images/header_title'
+        price_images:
+            uri_prefix: '%app.path.images%/price'
+            upload_destination: '%kernel.root_dir%/../public/uploads/images/price'
+        relaxation_slider_images:
+            uri_prefix: '%app.path.images%/relaxation_slider'
+            upload_destination: '%kernel.root_dir%/../public/uploads/images/relaxation_slider'
+        second_section_images:
+            uri_prefix: '%app.path.images%/second_section'
+            upload_destination: '%kernel.root_dir%/../public/uploads/images/second_section'
+        gallery_images:
+            uri_prefix: '%app.path.images%/gallery'
+            upload_destination: '%kernel.root_dir%/../public/uploads/images/gallery'
+        environment_image:
+            uri_prefix: '%app.path.images%/environment_image'
+            upload_destination: '%kernel.root_dir%/../public/uploads/images/environment_image'
+

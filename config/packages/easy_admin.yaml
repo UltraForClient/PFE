@@ -1,0 +1,86 @@
+easy_admin:
+    entities:
+
+        Conf:
+            label: 'Konferencje i szkolenia'
+            class: App\Entity\Conf
+        FirstSectionImage:
+            label: 'Pierwsza sekcja zdjęcia'
+            class: App\Entity\FirstSectionImage
+            form:
+                fields:
+                    - { property: 'imageFile', type: 'vich_image', template: 'vich_uploader_image.html.twig' }
+            disabled_actions: ['new', 'delete']
+        FirstSectionText:
+            label: 'Pierwsza sekcja tekst'
+            class: App\Entity\FirstSectionText
+            disabled_actions: ['new', 'delete']
+        Gallery:
+            label: 'Galeria'
+            class: App\Entity\Gallery
+            form:
+                fields:
+                    - { property: 'imageFile', type: 'vich_image', template: 'vich_uploader_image.html.twig' }
+                    - { property: 'alt', type: 'text' }
+        Header:
+            label: 'Nagłówek strona główna'
+            class: App\Entity\Header
+            form:
+                fields:
+                    - { property: 'backgroundImageFile', type: 'vich_image', template: 'vich_uploader_image.html.twig' }
+                    - { property: 'titleImageFile', type: 'vich_image', template: 'vich_uploader_image.html.twig' }
+                    - { property: 'titleAlt', type: 'text' }
+                    - { property: 'subtitle', type: 'text' }
+                    - { property: 'enabled', label: 'Dołącz do galeri' }
+            disabled_actions: ['new', 'delete']
+        Price:
+            label: 'Ceny'
+            class: App\Entity\Price
+            form:
+                fields:
+                    - { property: 'imageFile', type: 'vich_image', template: 'vich_uploader_image.html.twig' }
+                    - { property: 'alt', type: 'text' }
+                    - { property: 'text', type: 'text' }
+        Relaxation:
+            label: 'Relaks'
+            class: App\Entity\Relaxation
+
+        RelaxationSlider:
+            label: 'Relaks zdjęcia'
+            class: App\Entity\RelaxationSlider
+            form:
+                fields:
+                    - { property: 'imageFile', type: 'vich_image', template: 'vich_uploader_image.html.twig' }
+                    - { property: 'alt', type: 'text' }
+        SecondSectionImage:
+            label: 'Druga skecja zdjęcia'
+            class: App\Entity\SecondSectionImage
+            form:
+                fields:
+                    - { property: 'imageFile', type: 'vich_image', template: 'vich_uploader_image.html.twig' }
+            disabled_actions: ['new', 'delete']
+        SecondSectionText:
+            label: 'Druga skecja tekst'
+            class: App\Entity\SecondSectionText
+            disabled_actions: ['new', 'delete']
+        SliderText:
+            label: 'Tekst nad sliderem'
+            class: App\Entity\SliderText
+            disabled_actions: ['new', 'delete']
+        EnvironmentImage:
+            label: 'Okolica zdjęcia i tekst pod spodem'
+            class: App\Entity\EnvironmentImage
+            form:
+                fields:
+                    - { property: 'imageFile', type: 'vich_image', template: 'vich_uploader_image.html.twig' }
+                    - { property: 'alt', type: 'text' }
+                    - { property: 'title', type: 'text' }
+                    - { property: 'time', type: 'text' }
+                    - { property: 'text', type: 'text' }
+                    - { property: 'link', type: 'text' }
+
+        EnvironmentText:
+            label: 'Okolice tekest'
+            class: App\Entity\EnvironmentText
+            disabled_actions: ['new', 'delete']
+
