@@ -6,18 +6,33 @@
 {% block body %}
     <main class="container relaxation">
         <h1>Relaks</h1>
-        {% for relax in relaxs %}
-            <section id="{{ relax.title }}">
-                <h2>{{ relax.title }}</h2>
-                <p>{{ relax.text }}</p>
-                <ul class="slider-full">
-                {% for key, slider in relax.sliders %}
+        <section id="Sauna">
+            <h2>Sauna</h2>
+            <ul class="slider-full">
+            {% for slider in sliders if slider.des == 'Sauna' %}
+                <li><img src="{{ vich_uploader_asset(slider, 'imageFile') }}" alt="{{ slider.alt }}"></li>
+            {% endfor %}
+            </ul>
+            <div style="clear: both;"></div>
+        </section>
+        <section id="Siłownia">
+            <h2>Siłownia</h2>
+            <ul class="slider-full">
+                {% for slider in sliders if slider.des == 'Siłownia' %}
                     <li><img src="{{ vich_uploader_asset(slider, 'imageFile') }}" alt="{{ slider.alt }}"></li>
                 {% endfor %}
-                </ul>
-                <div style="clear: both;"></div>
-            </section>
-        {% endfor %}
+            </ul>
+            <div style="clear: both;"></div>
+        </section>
+        <section id="Bilard">
+            <h2>Bilard</h2>
+            <ul class="slider-full">
+                {% for slider in sliders if slider.des == 'Bilard' %}
+                    <li><img src="{{ vich_uploader_asset(slider, 'imageFile') }}" alt="{{ slider.alt }}"></li>
+                {% endfor %}
+            </ul>
+            <div style="clear: both;"></div>
+        </section>
     </main>
 {% endblock %}
 

@@ -269,10 +269,16 @@ button {
     position: absolute;
     bottom: 0;
     padding: 20px;
-    background-color: rgba(61, 148, 48, 0.3);
+    background-color: rgba(150, 159, 169, 0.52);
     width: calc(100% - 10px);
     text-align: center;
     color: #ffffff
+}
+
+.relaxation h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    padding: 15px;
 }
 
 #slider {
@@ -1004,8 +1010,8 @@ button {
 
 @media(min-width: 1200px) {
     .main-header__title img {
-        width: 50%;
-        height: 190px;
+        width: 40%;
+        height: 180px;
     }
 
     .screen {

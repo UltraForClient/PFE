@@ -40,10 +40,10 @@ class RelaxationSlider
     private $alt;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Relaxation", inversedBy="sliders")
-     * @ORM\JoinColumn(name="relaxation_slider_id", referencedColumnName="id")
+     * @ORM\Column(type="text")
+     * @var string
      */
-    private $relaxation;
+    private $des;
 
     public function getId(): ?int
     {
@@ -80,18 +80,13 @@ class RelaxationSlider
         return $this->alt;
     }
 
-    public function setRelaxation(Relaxation $relaxation): void
+    public function setDes(string $des): void
     {
-        $this->relaxation = $relaxation;
+        $this->des = $des;
     }
 
-    public function getRelaxation(): ?Relaxation
+    public function getDes(): ?string
     {
-        return $this->relaxation;
-    }
-
-    public function __toString(): string
-    {
-        return $this->alt;
+        return $this->des;
     }
 }

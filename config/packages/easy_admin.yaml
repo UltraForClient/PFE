@@ -31,7 +31,6 @@ easy_admin:
                     - { property: 'titleImageFile', type: 'vich_image', template: 'vich_uploader_image.html.twig' }
                     - { property: 'titleAlt', type: 'text' }
                     - { property: 'subtitle', type: 'text' }
-                    - { property: 'enabled', label: 'Dołącz do galeri' }
             disabled_actions: ['new', 'delete']
         Price:
             label: 'Ceny'
@@ -41,10 +40,6 @@ easy_admin:
                     - { property: 'imageFile', type: 'vich_image', template: 'vich_uploader_image.html.twig' }
                     - { property: 'alt', type: 'text' }
                     - { property: 'text', type: 'text' }
-        Relaxation:
-            label: 'Relaks'
-            class: App\Entity\Relaxation
-
         RelaxationSlider:
             label: 'Relaks zdjęcia'
             class: App\Entity\RelaxationSlider
@@ -52,6 +47,7 @@ easy_admin:
                 fields:
                     - { property: 'imageFile', type: 'vich_image', template: 'vich_uploader_image.html.twig' }
                     - { property: 'alt', type: 'text' }
+                    - { property: 'des', type: 'text' }
         SecondSectionImage:
             label: 'Druga skecja zdjęcia'
             class: App\Entity\SecondSectionImage

@@ -9,12 +9,11 @@ use App\Entity\FirstSectionText;
 use App\Entity\Gallery;
 use App\Entity\Header;
 use App\Entity\Price;
-use App\Entity\Relaxation;
+use App\Entity\RelaxationSlider;
 use App\Entity\SecondSectionImage;
 use App\Entity\SecondSectionText;
 use App\Entity\SliderText;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
@@ -78,10 +77,10 @@ class HomeController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $relaxs = $em->getRepository(Relaxation::class)->findAll();
+        $sliders = $em->getRepository(RelaxationSlider::class)->findAll();
 
         return $this->render('subpage/relaxation.html.twig', [
-            'relaxs' => $relaxs
+            'sliders' => $sliders
         ]);
     }
 
