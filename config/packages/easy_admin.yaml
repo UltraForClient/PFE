@@ -4,6 +4,7 @@ easy_admin:
         Conf:
             label: 'Konferencje i szkolenia'
             class: App\Entity\Conf
+            disabled_actions: ['new', 'delete']
         FirstSectionImage:
             label: 'Pierwsza sekcja zdjęcia'
             class: App\Entity\FirstSectionImage

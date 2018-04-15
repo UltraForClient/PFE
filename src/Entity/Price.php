@@ -37,13 +37,25 @@ class Price
      * @ORM\Column(type="text")
      * @var string
      */
-    private $alt;
+    private $altPl;
 
     /**
      * @ORM\Column(type="text")
      * @var string
      */
-    private $text;
+    private $altEn;
+
+    /**
+     * @ORM\Column(type="text")
+     * @var string
+     */
+    private $textPl;
+
+    /**
+     * @ORM\Column(type="text")
+     * @var string
+     */
+    private $textEn;
 
     public function getId(): ?int
     {
@@ -70,23 +82,43 @@ class Price
         return $this->imageFile;
     }
 
-    public function setAlt(string $alt): void
+    public function setAltPl(string $altPl): void
     {
-        $this->alt = $alt;
+        $this->altPl = $altPl;
     }
 
-    public function getAlt(): ?string
+    public function getAltPl(): ?string
     {
-        return $this->alt;
+        return $this->altPl;
     }
 
-    public function setText(string $text): void
+    public function setAltEn(string $altEn): void
     {
-        $this->text = $text;
+        $this->altEn = $altEn;
     }
 
-    public function getText(): ?string
+    public function getAltEn(): ?string
     {
-        return $this->text;
+        return $this->altEn;
+    }
+
+    public function setTextPl(string $textPl): void
+    {
+        $this->textPl = $textPl;
+    }
+
+    public function getTextPl(): ?string
+    {
+        return $this->textEn;
+    }
+
+    public function setTextEn(string $textEn): void
+    {
+        $this->textEn = $textEn;
+    }
+
+    public function getTextEn(): ?string
+    {
+        return $this->textEn;
     }
 }

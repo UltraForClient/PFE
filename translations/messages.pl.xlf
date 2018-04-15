@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="pl" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="nav.homepage">
+                <source>nav.homepage</source>
+                <target>Strona główna</target>
+            </trans-unit>
+
+            <trans-unit id="nav.hotel">
+                <source>nav.hotel</source>
+                <target>Hotel</target>
+            </trans-unit>
+            <trans-unit id="sub.hotel.walk">
+                <source>sub.hotel.walk</source>
+                <target>Spacer po hotelu</target>
+            </trans-unit>
+            <trans-unit id="sub.hotel.surroundings">
+                <source>sub.hotel.surroundings</source>
+                <target>Okolica</target>
+            </trans-unit>
+
+            <trans-unit id="nav.prices">
+                <source>nav.prices</source>
+                <target>Ceny</target>
+            </trans-unit>
+
+            <trans-unit id="nav.relaxation">
+                <source>nav.relaxation</source>
+                <target>Relaks</target>
+            </trans-unit>
+            <trans-unit id="sub.relaxation.sauna">
+                <source>sub.relaxation.sauna</source>
+                <target>Sauna</target>
+            </trans-unit>
+            <trans-unit id="sub.relaxation.gym">
+                <source>sub.relaxation.gym</source>
+                <target>Siłownia</target>
+            </trans-unit>
+            <trans-unit id="sub.relaxation.billiards">
+                <source>sub.relaxation.billiards</source>
+                <target>Bilard</target>
+            </trans-unit>
+
+            <trans-unit id="nav.conf_train">
+                <source>nav.conf_train</source>
+                <target>Konferencje &amp; Szkolenia</target>
+            </trans-unit>
+            <trans-unit id="sub.conf_train.conf">
+                <source>sub.conf_train.conf</source>
+                <target>Konferencje</target>
+            </trans-unit>
+            <trans-unit id="sub.conf_train.train">
+                <source>sub.conf_train.train</source>
+                <target>Szkolenia</target>
+            </trans-unit>
+
+            <trans-unit id="nav.gallery">
+                <source>nav.gallery</source>
+                <target>Galeria</target>
+            </trans-unit>
+
+            <trans-unit id="nav.contact">
+                <source>nav.contact</source>
+                <target>Kontakt</target>
+            </trans-unit>
+
+            <trans-unit id="down_nav.contact">
+                <source>down_nav.contact</source>
+                <target>Kontakt</target>
+            </trans-unit>
+            <trans-unit id="down_nav.map">
+                <source>down_nav.map</source>
+                <target>Mapa</target>
+            </trans-unit>
+            <trans-unit id="down_nav.walk">
+                <source>down_nav.walk</source>
+                <target>Spacer</target>
+            </trans-unit>
+            <trans-unit id="down_nav.menu">
+                <source>down_nav.menu</source>
+                <target>Menu</target>
+            </trans-unit>
+
+            <trans-unit id="header.title">
+                <source>header.title</source>
+                <target>Zapraszamy</target>
+            </trans-unit>
+
+            <trans-unit id="img.first.hotel">
+                <source>img.first.hotel</source>
+                <target>Hotel</target>
+            </trans-unit>
+            <trans-unit id="img.first.rooms">
+                <source>img.first.rooms</source>
+                <target>Pokoje</target>
+            </trans-unit>
+            <trans-unit id="img.first.party">
+                <source>img.first.party</source>
+                <target>Imprezy</target>
+            </trans-unit>
+
+            <trans-unit id="img.second.relaxation">
+                <source>img.second.relaxation</source>
+                <target>Relaks</target>
+            </trans-unit>
+            <trans-unit id="img.second.conf_train">
+                <source>img.second.conf_train</source>
+                <target>Konferencje &amp; Szkolenia</target>
+            </trans-unit>
+
+            <trans-unit id="gallery.text">
+                <source>gallery.text</source>
+                <target> Galeria zdjęć, wszystkie pod</target>
+            </trans-unit>
+            <trans-unit id="gallery.link">
+                <source>gallery.link</source>
+                <target>tym linkiem</target>
+            </trans-unit>
+
+            <trans-unit id="contact.title">
+                <source>contact.title</source>
+                <target>Kontakt</target>
+            </trans-unit>
+
+            <trans-unit id="contact.address">
+                <source>contact.address</source>
+                <target>Adres</target>
+            </trans-unit>
+            <trans-unit id="contact.sub.name">
+                <source>contact.sub.name</source>
+                <target>Nazwa</target>
+            </trans-unit>
+            <trans-unit id="contact.sub.address">
+                <source>contact.sub.address</source>
+                <target>Adres</target>
+            </trans-unit>
+            <trans-unit id="contact.sub.place">
+                <source>contact.sub.place</source>
+                <target>Miejscowość</target>
+            </trans-unit>
+            <trans-unit id="contact.sub.province">
+                <source>contact.sub.province</source>
+                <target>Województwo</target>
+            </trans-unit>
+            <trans-unit id="contact.sub.tel_fax">
+                <source>contact.sub.tel_fax</source>
+                <target>Tel/fax</target>
+            </trans-unit>
+            <trans-unit id="contact.sub.e_mail">
+                <source>contact.sub.e_mail</source>
+                <target>E-mail</target>
+            </trans-unit>
+
+            <trans-unit id="contact.form.title">
+                <source>contact.form.title</source>
+                <target>Skontaktuj się z nami</target>
+            </trans-unit>
+            <trans-unit id="contact.form.name">
+                <source>contact.form.name</source>
+                <target>Imię</target>
+            </trans-unit>
+            <trans-unit id="contact.form.surname">
+                <source>contact.form.surname</source>
+                <target>Nazwisko</target>
+            </trans-unit>
+            <trans-unit id="contact.form.e_mail">
+                <source>contact.form.e_mail</source>
+                <target>E-mail</target>
+            </trans-unit>
+            <trans-unit id="contact.form.phone">
+                <source>contact.form.phone</source>
+                <target>Telefon</target>
+            </trans-unit>
+            <trans-unit id="contact.form.text">
+                <source>contact.form.text</source>
+                <target>Tekst</target>
+            </trans-unit>
+            <trans-unit id="contact.form.send">
+                <source>contact.form.send</source>
+                <target>Wyślij</target>
+            </trans-unit>
+
+            <trans-unit id="con_tra.title">
+                <source>con_tra.title</source>
+                <target>Konferencje &amp; Szkolenia</target>
+            </trans-unit>
+            <trans-unit id="con_tra.subtitle.tra">
+                <source>con_tra.subtitle.tra</source>
+                <target>Szkolenia</target>
+            </trans-unit>
+            <trans-unit id="con_tra.subtitle.conf">
+                <source>con_tra.subtitle.conf</source>
+                <target>Szkolenia/Bankiety</target>
+            </trans-unit>
+            <trans-unit id="con_tra.layout">
+                <source>con_tra.layout</source>
+                <target>Rodzaje ustawień</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

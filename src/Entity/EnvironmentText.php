@@ -25,20 +25,36 @@ class EnvironmentText
      * @ORM\Column(type="text")
      * @var string
      */
-    private $text;
+    private $textPl;
+
+    /**
+     * @ORM\Column(type="text")
+     * @var string
+     */
+    private $textEn;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function setText(string $text): void
+    public function setTextPl(string $textPl): void
     {
-        $this->text = $text;
+        $this->textPl = $textPl;
     }
 
-    public function getText(): ?string
+    public function getTextPl(): ?string
     {
-        return $this->text;
+        return $this->textPl;
+    }
+
+    public function setTextEn(string $textEn): void
+    {
+        $this->textEn = $textEn;
+    }
+
+    public function getTextEn(): ?string
+    {
+        return $this->textEn;
     }
 }

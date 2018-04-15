@@ -37,7 +37,13 @@ class RelaxationSlider
      * @ORM\Column(type="text")
      * @var string
      */
-    private $alt;
+    private $altPl;
+
+    /**
+     * @ORM\Column(type="text")
+     * @var string
+     */
+    private $altEn;
 
     /**
      * @ORM\Column(type="text")
@@ -70,14 +76,24 @@ class RelaxationSlider
         return $this->imageFile;
     }
 
-    public function setAlt(string $alt): void
+    public function setAltPl(string $altPl): void
     {
-        $this->alt = $alt;
+        $this->altPl = $altPl;
     }
 
-    public function getAlt(): ?string
+    public function getAltPl(): ?string
     {
-        return $this->alt;
+        return $this->altPl;
+    }
+
+    public function setAltEn(string $altEn): void
+    {
+        $this->altEn = $altEn;
+    }
+
+    public function getAltEn(): ?string
+    {
+        return $this->altEn;
     }
 
     public function setDes(string $des): void

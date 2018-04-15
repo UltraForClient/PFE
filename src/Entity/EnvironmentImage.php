@@ -38,29 +38,50 @@ class EnvironmentImage
      * @ORM\Column(type="string", length=255)
      * @var string
      */
-    private $alt;
+    private $altPl;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @var string
+     */
+    private $altEn;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @var string
+     */
+    private $titlePl;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @var string
+     */
+    private $titleEn;
 
 
     /**
      * @ORM\Column(type="string", length=255)
      * @var string
      */
-    private $title;
-
+    private $timePl;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @var string
      */
-    private $time;
-
+    private $timeEn;
 
     /**
      * @ORM\Column(type="text")
      * @var string
      */
-    private $text;
+    private $textPl;
 
+    /**
+     * @ORM\Column(type="text")
+     * @var string
+     */
+    private $textEn;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -93,44 +114,84 @@ class EnvironmentImage
         return $this->imageFile;
     }
 
-    public function setAlt(string $alt): void
+    public function setAltPl(string $altPl): void
     {
-        $this->alt = $alt;
+        $this->altPl = $altPl;
     }
 
-    public function getAlt(): ?string
+    public function getAltPl(): ?string
     {
-        return $this->alt;
+        return $this->altPl;
     }
 
-    public function setTitle(string $title): void
+    public function setAltEn(string $altEn): void
     {
-        $this->title = $title;
+        $this->altEn = $altEn;
     }
 
-    public function getTitle(): ?string
+    public function getAltEn(): ?string
     {
-        return $this->title;
+        return $this->altEn;
     }
 
-    public function setText(string $text): void
+    public function setTitlePl(string $titlePl): void
     {
-        $this->text = $text;
+        $this->titlePl = $titlePl;
     }
 
-    public function getText(): ?string
+    public function getTitlePl(): ?string
     {
-        return $this->text;
+        return $this->titlePl;
     }
 
-    public function setTime(string $time): void
+    public function setTitleEn(string $titleEn): void
     {
-        $this->time = $time;
+        $this->titleEn = $titleEn;
     }
 
-    public function getTime(): ?string
+    public function getTitleEn(): ?string
     {
-        return $this->time;
+        return $this->titleEn;
+    }
+
+    public function setTextPl(string $textPl): void
+    {
+        $this->textPl = $textPl;
+    }
+
+    public function getTextPl(): ?string
+    {
+        return $this->textPl;
+    }
+
+    public function setTextEn(string $textEn): void
+    {
+        $this->textEn = $textEn;
+    }
+
+    public function getTextEn(): ?string
+    {
+        return $this->textEn;
+    }
+
+    public function setTimePl(string $timePl): void
+    {
+        $this->timePl = $timePl;
+    }
+
+    public function getTimePl(): ?string
+    {
+        return $this->timePl;
+    }
+
+    public function setTimeEn(string $timeEn): void
+    {
+        $this->timeEn = $timeEn;
+    }
+
+    public function getTimeEn(): ?string
+    {
+        return $this->timeEn;
     }
 
     public function setLink(string $link): void

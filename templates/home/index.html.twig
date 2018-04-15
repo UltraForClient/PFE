@@ -8,10 +8,10 @@
 <main>
     <header class="screen main-header" style="background-image: url({{ vich_uploader_asset(header, 'backgroundImageFile') }});">
         <h1 class="main-header__title">
-            <img class="main-header__img" src="{{ vich_uploader_asset(header, 'titleImageFile') }}" alt="{{ header.titleAlt }}">
+            <img class="main-header__img" src="{{ vich_uploader_asset(header, 'titleImageFile') }}" {% set method="titleAlt#{ locale }"  %} alt="{{ attribute(header, method) }}">
             <div class="main-header__boxtext">
-                <p>{{ header.subtitle }}</p>
-                <a href="#first-screen"><h2 class="shine">Zapraszamy</h2></a>
+                <p>Gościniec Europejski</p>
+                <a href="#first-screen"><h2 class="shine">{{ 'header.title'|trans }}</h2></a>
             </div>
         </h1>
     </header>
@@ -19,7 +19,7 @@
         <ul class="slider">
             {% for image in images %}
                 {% if image.enabled %}
-                    <li><img src="{{ vich_uploader_asset(image, 'imageFile') }}" alt="{{ image.alt }}" data-description="{{ image.alt }}"></li>
+                    <li><img src="{{ vich_uploader_asset(image, 'imageFile') }}" {% set method="alt#{ locale }"  %} alt="{{ attribute(image, method) }}" data-description="{{ attribute(image, method) }}"></li>
                 {% endif %}
             {% endfor %}
         </ul>
@@ -29,8 +29,9 @@
         <div id="price">
             {% for price in prices %}
                 <figure class="price">
-                    <img src="{{ vich_uploader_asset(price, 'imageFile') }}" alt="{{ price.alt }}">
-                    <span>{{ price.text }}</span>
+                    <img src="{{ vich_uploader_asset(price, 'imageFile') }}" {% set method="alt#{ locale }"  %} alt="{{ attribute(price, method) }}">
+                    {% set method="text#{ locale }"  %}
+                    <span>{# {{ attribute(price, method) }} #} {{ price.textPl }}</span>
                 </figure>
             {% endfor %}
         </div>
@@ -38,24 +39,25 @@
     <section id="first-screen" class="screen screen-section">
         <div class="screen__text screen__text1">
             <h3 class="screen__title">Gościniec Europejski</h3>
-            {{ firstSectionText.text|raw }}
+            {% set method="text#{ locale }"  %}
+            {{ attribute(firstSectionText, method)|raw }}
         </div>
         <div class="screen__image screen__image1 image-three">
             <div class="screen__image-box image-inline1 animated" data-animated="fadeInRight">
                 <div class="screen__img" style="background-image: url({{ vich_uploader_asset(firstSectionImage[0], 'imageFile') }})">
-                    <div class="screen__img-border">Hotel</div>
+                    <div class="screen__img-border">{{ 'img.first.hotel'|trans }}</div>
                     <div class="screen__img-background" style="background-color: rgb(212, 134, 72)"></div>
                 </div>
             </div>
             <div class="screen__image-box image-inline2 animated" data-animated="fadeInLeft">
                 <div class="screen__img" style="background-image: url({{ vich_uploader_asset(firstSectionImage[1], 'imageFile') }})">
-                    <div class="screen__img-border">Pokoje</div>
+                    <div class="screen__img-border">{{  'img.first.rooms'|trans }}</div>
                     <div class="screen__img-background" style="background-color: rgb(222, 238, 242)"></div>
                 </div>
             </div>
             <div class="screen__image-box image-block3 animated" data-animated="fadeInUp">
                 <div class="screen__img" style="background-image: url({{ vich_uploader_asset(firstSectionImage[2], 'imageFile') }})">
-                    <div class="screen__img-border">Przyjęcia</div>
+                    <div class="screen__img-border">{{ 'img.first.party'|trans }}</div>
                     <div class="screen__img-background" style="background-color: rgb(123, 60, 40)"></div>
                 </div>
             </div>
@@ -64,84 +66,82 @@
     <section class="screen screen-section">
         <div class="screen__text screen__text2">
             <h3 class="screen__title">Gościniec Europejski</h3>
-            {{ secondSectionText.text|raw }}
+            {% set method="text#{ locale }"  %}
+            {{ attribute(secondSectionText, method)|raw }}
         </div>
         <div class="screen__image screen__image2 image-two">
             <div class="screen__image-box image-block4 animated" data-animated="fadeInRight">
                 <div class="screen__img" style="background-image: url({{ vich_uploader_asset(secondSectionImage[0], 'imageFile') }} )">
-                    <div class="screen__img-border">Relaks</div>
+                    <div class="screen__img-border">{{ 'img.second.relaxation'|trans }}</div>
                     <div class="screen__img-background" style="background-color: rgb(72, 111, 67)"></div>
                 </div>
             </div>
             <div class="screen__image-box image-block5 animated" data-animated="fadeInRight">
                 <div class="screen__img" style="background-image: url({{ vich_uploader_asset(secondSectionImage[1], 'imageFile') }})">
-                    <div class="screen__img-border">Konferencje & szkolenia</div>
+                    <div class="screen__img-border">{{ 'img.second.conf_train'|trans }}</div>
                     <div class="screen__img-background" style="background-color: rgb(98, 79, 65)"></div>
                 </div>
             </div>
         </div>
     </section>
     <section class="min-screen">
-        {{ sliderText.text|raw }}
+        {% set method="text#{ locale }"  %}
+        {{ attribute(sliderText, method)|raw }}
     </section>
     <aside id="slider-full">
         <h2 class="slider-full__title">
-            <span>Galeria zdjęć wszystkie pod <a href="#">tym linkiem</a></span>
+            <span>{{ 'gallery.text'|trans }} <a href="{{ path('gallery') }}">{{ 'gallery.link'|trans }}</a></span>
         </h2>
         <ul class="slider-full">
             {% for image in images %}
-                <li><img src="{{ vich_uploader_asset(image, 'imageFile') }}" alt="{{ image.alt }}" data-description="{{ image.alt }}"></li>
+                <li><img src="{{ vich_uploader_asset(image, 'imageFile') }}" {% set method="alt#{ locale }"  %} alt="{{ attribute(image, method) }}" data-description="{{ attribute(image, method) }}"></li>
             {% endfor %}
         </ul>
     </aside>
     <div style="clear:both;"></div>
     <section id="contact" class="screen contact" style="background-image: url({{ asset('build/img/recepcja.jpg') }});">
         <div>
-            <h2 class="contact__title">Kontakt</h2>
-            <h3 class="contact__subtitle1">Adres</h3>
+            <h2 class="contact__title">{{ 'contact.title'|trans }}</h2>
+            <h3 class="contact__subtitle1">{{ 'contact.address'|trans }}</h3>
             <div class="contact__text">
-                <p>Nazwa: <span><b>Gościniec Europejski</b></span></p>
-                <p>Adres: <span><strong>Przyjmo, ul. Dolna 2</strong></span></p>
-                <p>Miejscowość: <span>26-085 Miedziana Góra</span></p>
-                <p>Województwo: <span>Świętokrzyskie</span></p>
-                <p>Tel/fax: <span><strong>+48 41 303 41 03</strong></span></p>
-                <p>E-mail: <span>goscinieceuropejski@op.pl</span></p>
+                <p>{{ 'contact.sub.name'|trans }}: <span><b>Gościniec Europejski</b></span></p>
+                <p>{{ 'contact.sub.address'|trans }}: <span><strong>Przyjmo, ul. Dolna 2</strong></span></p>
+                <p>{{ 'contact.sub.place'|trans }}: <span>26-085 Miedziana Góra</span></p>
+                <p>{{ 'contact.sub.province'|trans }}: <span>Świętokrzyskie</span></p>
+                <p>{{ 'contact.sub.tel_fax'|trans }}: <span><strong>+48 41 303 41 03</strong></span></p>
+                <p>{{ 'contact.sub.e_mail'|trans }}: <span>goscinieceuropejski@op.pl</span></p>
             </div>
-            <h3 class="contact__subtitle2">Skontaktuj się z nami</h3>
+            <h3 class="contact__subtitle2">{{ 'contact.form.title'|trans }}</h3>
             <form method="post" class="contact__form">
                 <div class="form__group">
-                    <label for="name">Imię</label>
-                    <input type="text" class="form__input" name="name" id="name" title="Imię" placeholder="Imię"
-                           required="">
+                    <label for="name">{{ 'contact.form.name'|trans }}</label>
+                    <input type="text" class="form__input" name="name" id="name" title="{{ 'contact.form.name'|trans }}" placeholder="{{ 'contact.form.name'|trans }}" required="">
                 </div>
                 <div class="form__group">
-                    <label for="surname">Nazwisko</label>
-                    <input type="text" class="form__input" name="surname" id="surname" title="Nazwisko"
-                           placeholder="Nazwisko" required="">
+                    <label for="surname">{{ 'contact.form.surname'|trans }}</label>
+                    <input type="text" class="form__input" name="surname" id="surname" title="{{ 'contact.form.surname'|trans }}"
+                           placeholder="{{ 'contact.form.surname'|trans }}" required="">
                 </div>
                 <div class="form__group">
-                    <label for="email">Email</label>
-                    <input type="text" class="form__input" name="email" id="email" title="Email" placeholder="Email"
-                           required="">
+                    <label for="email">{{ 'contact.form.e_mail'|trans }}</label>
+                    <input type="text" class="form__input" name="email" id="email" title="{{ 'contact.form.e_mail'|trans }}" placeholder="{{ 'contact.form.e_mail'|trans }}" required="">
                 </div>
                 <div class="form__group">
-                    <label for="phone">Telefon</label>
-                    <input type="tel" class="form__input" name="phone" id="phone" title="Telefon" placeholder="Telefon"
-                           required="">
+                    <label for="phone">{{ 'contact.form.phone'|trans }}</label>
+                    <input type="tel" class="form__input" name="phone" id="phone" title="{{ 'contact.form.phone'|trans }}" placeholder="{{ 'contact.form.phone'|trans }}" required="">
                 </div>
                 <div class="form__group">
-                    <label for="content">Treść</label>
-                    <textarea class="form__input form__textarea" rows="6" name="content" id="content" title="Treść"
-                              placeholder="Treść" required=""></textarea>
+                    <label for="content">{{ 'contact.form.text'|trans }}</label>
+                    <textarea class="form__input form__textarea" rows="6" name="content" id="content" title="{{ 'contact.form.text'|trans }}" placeholder="{{ 'contact.form.text'|trans }}" required=""></textarea>
                 </div>
                 <div class="form__group">
-                    <button class="form__button" title="Wyślij">Wyślij</button>
+                    <button class="form__button" title="{{ 'contact.form.send'|trans }}">{{ 'contact.form.send'|trans }}</button>
                 </div>
             </form>
         </div>
     </section>
     <section class="screen map">
-        <h2 class="map__title">Mapa</h2>
+        <h2 class="map__title">{{ 'down_nav.map'|trans }}</h2>
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10047.441864694134!2d20.5184728!3d50.9817697!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x97631502882b9472!2sGo%C5%9Bciniec+Europejski!5e0!3m2!1spl!2spl!4v1522351627997"
                 height="450" style="border:0; width: 100%; margin-top: 20px" allowfullscreen></iframe>
     </section>

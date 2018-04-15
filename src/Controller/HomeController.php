@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Conf;
 use App\Entity\EnvironmentImage;
 use App\Entity\EnvironmentText;
 use App\Entity\FirstSectionImage;
@@ -14,6 +15,7 @@ use App\Entity\SecondSectionImage;
 use App\Entity\SecondSectionText;
 use App\Entity\SliderText;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
@@ -24,11 +26,13 @@ class HomeController extends Controller
     /**
      * @Route("/", name="home")
      */
-    public function indexAction(): Response
+    public function indexAction(Request $request): Response
     {
         $em = $this->getDoctrine()->getManager();
+        $locale = ucfirst($request->getLocale());
 
         $header = $em->getRepository(Header::class)->find(1);
+
         $images = $em->getRepository(Gallery::class)->findAll();
 
         $prices = $em->getRepository(Price::class)->findAll();
@@ -49,23 +53,26 @@ class HomeController extends Controller
             'firstSectionImage' => $firstSectionImage,
             'secondSectionImage' => $secondSectionImage,
             'secondSectionText' => $secondSectionText,
-            'sliderText' => $sliderText
+            'sliderText' => $sliderText,
+            'locale' => $locale
         ]);
     }
 
     /**
      * @Route("/environment", name="environment")
      */
-    public function environmentAction(): Response
+    public function environmentAction(Request $request): Response
     {
         $em = $this->getDoctrine()->getManager();
+        $locale = ucfirst($request->getLocale());
 
         $text = $em->getRepository(EnvironmentText::class)->find(1);
         $images = $em->getRepository(EnvironmentImage::class)->findAll();
 
         return $this->render('subpage/environment.html.twig', [
             'text' => $text,
-            'images' => $images
+            'images' => $images,
+            'locale' => $locale
         ]);
     }
 
@@ -73,35 +80,50 @@ class HomeController extends Controller
     /**
      * @Route("/relaxation", name="relaxation")
      */
-    public function relaxAction(): Response
+    public function relaxAction(Request $request): Response
     {
         $em = $this->getDoctrine()->getManager();
+        $locale = ucfirst($request->getLocale());
 
         $sliders = $em->getRepository(RelaxationSlider::class)->findAll();
 
         return $this->render('subpage/relaxation.html.twig', [
-            'sliders' => $sliders
+            'sliders' => $sliders,
+            'locale' => $locale
         ]);
     }
 
     /**
      * @Route("/conference-training", name="con-tra")
      */
-    public function conTraAction(): Response
+    public function conTraAction(Request $request): Response
     {
-        return $this->render('subpage/con-tra.html.twig', []);
+        $em = $this->getDoctrine()->getManager();
+        $locale = ucfirst($request->getLocale());
+
+        $text1 = $em->getRepository(Conf::class)->find(1);
+        $text2 = $em->getRepository(Conf::class)->find(2);
+
+        return $this->render('subpage/con-tra.html.twig', [
+            'text1' => $text1,
+            'text2' => $text2,
+            'locale' => $locale
+        ]);
     }
 
     /**
      * @Route("/gallery", name="gallery")
      */
-    public function galleryAction(): Response
+    public function galleryAction(Request $request): Response
     {
         $em = $this->getDoctrine()->getManager();
+        $locale = ucfirst($request->getLocale());
+
         $images = $em->getRepository(Gallery::class)->findAll();
 
         return $this->render('subpage/gallery.html.twig', [
-            'images' => $images
+            'images' => $images,
+            'locale' => $locale
         ]);
     }
 }

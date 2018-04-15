@@ -49,13 +49,13 @@ class Header
      * @ORM\Column(type="text")
      * @var string
      */
-    private $titleAlt;
+    private $titleAltPl;
 
     /**
      * @ORM\Column(type="text")
      * @var string
      */
-    private $subtitle;
+    private $titleAltEn;
 
     public function getId(): ?int
     {
@@ -102,23 +102,24 @@ class Header
         return $this->titleImage;
     }
 
-    public function setTitleAlt(string $titleAlt): void
+    public function setTitleAltPl(string $titleAltPl): void
     {
-        $this->titleAlt = $titleAlt;
+        $this->titleAltPl = $titleAltPl;
     }
 
-    public function getTitleAlt(): ?string
+    public function getTitleAltPl(): ?string
     {
-        return $this->titleAlt;
+        return $this->titleAltPl;
     }
 
-    public function setSubtitle(string $subtitle): void
+    public function setTitleAltEn(string $titleAltEn): void
     {
-        $this->subtitle = $subtitle;
+        $this->titleAltEn = $titleAltEn;
     }
 
-    public function getSubtitle(): ?string
+    public function getTitleAltEn(): ?string
     {
-        return $this->subtitle;
+        return $this->titleAltEn;
     }
+
 }

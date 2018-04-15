@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&amp;subset=latin-ext" rel="stylesheet">
-        {#<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">#}
         <link rel="stylesheet" href="{{ asset('build/index.css') }}">
         {% block css %}{% endblock %}
     </head>
@@ -15,52 +14,56 @@
             <nav class="header__nav nav">
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <a href="{{ path('home') }}" class="nav__link">Strona główna</a>
+                        <a href="{{ path('home') }}" class="nav__link">{{ 'nav.homepage'|trans }}</a>
                     </li>
                     <li class="nav__item">
-                        <button class="nav__link" data-toggle="open-submenu">Hotel <span class="fas fa-arrow-down"></span></button>
+                        <button class="nav__link" data-toggle="open-submenu">{{ 'nav.hotel'|trans }} <span class="fas fa-arrow-down"></span></button>
                         <ul class="nav__submenu submenu">
                             <li class="submenu__item">
-                                <a href="https://goo.gl/maps/c1RLkEvmjH62" target="_blank" class="submenu__link">Spacer po hotelu</a>
+                                <a href="https://goo.gl/maps/c1RLkEvmjH62" target="_blank" class="submenu__link">{{ 'sub.hotel.walk'|trans }}</a>
                             </li>
                             <li class="submenu__item">
-                                <a href="{{ path('environment') }}" class="submenu__link">Okolica</a>
+                                <a href="{{ path('environment') }}" class="submenu__link">{{ 'sub.hotel.surroundings'|trans }}</a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav__item">
-                        <a href="{{ path('home') }}#price" class="nav__link">Ceny</a>
+                        <a href="{{ path('home') }}#price" class="nav__link">{{ 'nav.prices'|trans }}</a>
                     </li>
                     <li class="nav__item">
-                        <button class="nav__link" data-toggle="open-submenu">Relaks <span class="fas fa-arrow-down"></span></button>
+                        <button class="nav__link" data-toggle="open-submenu">{{ 'nav.relaxation'|trans }} <span class="fas fa-arrow-down"></span></button>
                         <ul class="nav__submenu submenu">
                             <li class="submenu__item">
-                                <a href="{{ path('relaxation') }}#Sauna" class="submenu__link">Sauna</a>
+                                <a href="{{ path('relaxation') }}#Sauna" class="submenu__link">{{ 'sub.relaxation.sauna'|trans }}</a>
                             </li>
                             <li class="submenu__item">
-                                <a href="{{ path('relaxation') }}#Siłownia" class="submenu__link">Siłownia</a>
+                                <a href="{{ path('relaxation') }}#Siłownia" class="submenu__link">{{ 'sub.relaxation.gym'|trans }}</a>
                             </li>
                             <li class="submenu__item">
-                                <a href="{{ path('relaxation') }}#Bilard" class="submenu__link">Bilard</a>
+                                <a href="{{ path('relaxation') }}#Bilard" class="submenu__link">{{ 'sub.relaxation.billiards'|trans }}</a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav__item">
-                        <button class="nav__link" data-toggle="open-submenu">Konferencje <span>&</span> szkolenia <span class="fas fa-arrow-down"></span></button>
+                        <button class="nav__link" data-toggle="open-submenu">{{ 'nav.conf_train'|trans }} <span class="fas fa-arrow-down"></span></button>
                         <ul class="nav__submenu submenu">
                             <li class="submenu__item">
-                                <a href="{{ path('con-tra') }}#training" class="submenu__link">Konferencje</a>
+                                <a href="{{ path('con-tra') }}#training" class="submenu__link">{{ 'sub.conf_train.conf'|trans }}</a>
                             </li>
                             <li class="submenu__item">
-                                <a href="{{ path('con-tra') }}#conferences" class="submenu__link">Szkolenia</a>
+                                <a href="{{ path('con-tra') }}#conferences" class="submenu__link">{{ 'sub.conf_train.train'|trans }}</a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav__item">
-                        <a href="{{ path('gallery') }}" class="nav__link">Galeria</a>
+                        <a href="{{ path('gallery') }}" class="nav__link">{{ 'nav.gallery'|trans }}</a>
                     </li>
                     <li class="nav__item">
-                        <a href="{{ path('home') }}#contact" class="nav__link">Kontakt</a>
+                        <a href="{{ path('home') }}#contact" class="nav__link">{{ 'nav.contact'|trans }}</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="http://goscinieceuropejski.pl/en/" class="nav__link">English</a>
+                        <a href="http://goscinieceuropejski.pl/pl/" class="nav__link">Polski</a>
                     </li>
                     <div class="arrow-indicator"></div>
                 </ul>
@@ -70,25 +73,25 @@
                     <li class="nav-mobile__item">
                         <button class="nav-mobile__link">
                             <span class="fas fa-envelope"></span>
-                            <span>Kontakt</span>
+                            <span>{{ 'down_nav.contact'|trans }}</span>
                         </button>
                     </li>
                     <li class="nav-mobile__item">
                         <button class="nav-mobile__link">
                             <span class="fas fa-map"></span>
-                            <span>Mapa</span>
+                            <span>{{ 'down_nav.map'|trans }}</span>
                         </button>
                     </li>
                     <li class="nav-mobile__item">
                         <a href="#" class="nav-mobile__link">
                             <span class="fas fa-street-view"></span>
-                            <span>Spacer</span>
+                            <span>{{ 'down_nav.walk'|trans }}</span>
                         </a>
                     </li>
                     <li class="nav-mobile__item">
                         <button class="nav-mobile__link menu-button">
                             <span class="fas fa-bars"></span>
-                            <span>Menu</span>
+                            <span>{{ 'down_nav.menu'|trans }}</span>
                         </button>
                     </li>
                 </ul>

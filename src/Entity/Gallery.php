@@ -38,7 +38,13 @@ class Gallery
      * @ORM\Column(type="text")
      * @var string
      */
-    private $alt;
+    private $altPl;
+
+    /**
+     * @ORM\Column(type="text")
+     * @var string
+     */
+    private $altEn;
 
     /**
     * @ORM\Column(type="boolean")
@@ -70,14 +76,24 @@ class Gallery
         return $this->imageFile;
     }
 
-    public function setAlt(string $alt): void
+    public function setAltPl(string $alt): void
     {
-        $this->alt = $alt;
+        $this->altPl = $alt;
     }
 
-    public function getAlt(): ?string
+    public function getAltPl(): ?string
     {
-        return $this->alt;
+        return $this->altPl;
+    }
+
+    public function setAltEn(string $altEn): void
+    {
+        $this->altEn = $altEn;
+    }
+
+    public function getAltEn(): ?string
+    {
+        return $this->altEn;
     }
 
     public function setEnabled(bool $enabled): void

@@ -12,5 +12,4 @@ class HeaderRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Header::class);
     }
-
 }

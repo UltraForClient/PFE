@@ -4,31 +4,32 @@
 {% endblock %}
 
 {% block body %}
+    {% set method="alt#{ locale }"  %}
     <main class="container relaxation">
-        <h1>Relaks</h1>
+        <h1>{{ 'nav.relaxation'|trans }}</h1>
         <section id="Sauna">
-            <h2>Sauna</h2>
+            <h2>{{ 'sub.relaxation.sauna'|trans }}</h2>
             <ul class="slider-full">
             {% for slider in sliders if slider.des == 'Sauna' %}
-                <li><img src="{{ vich_uploader_asset(slider, 'imageFile') }}" alt="{{ slider.alt }}"></li>
+                <li><img src="{{ vich_uploader_asset(slider, 'imageFile') }}" alt="{{ attribute(slider, method)|raw }}"></li>
             {% endfor %}
             </ul>
             <div style="clear: both;"></div>
         </section>
         <section id="Siłownia">
-            <h2>Siłownia</h2>
+            <h2>{{ 'sub.relaxation.gym'|trans }}</h2>
             <ul class="slider-full">
                 {% for slider in sliders if slider.des == 'Siłownia' %}
-                    <li><img src="{{ vich_uploader_asset(slider, 'imageFile') }}" alt="{{ slider.alt }}"></li>
+                    <li><img src="{{ vich_uploader_asset(slider, 'imageFile') }}" alt="{{ attribute(slider, method)|raw }}"></li>
                 {% endfor %}
             </ul>
             <div style="clear: both;"></div>
         </section>
         <section id="Bilard">
-            <h2>Bilard</h2>
+            <h2>{{ 'sub.relaxation.billiards'|trans }}</h2>
             <ul class="slider-full">
                 {% for slider in sliders if slider.des == 'Bilard' %}
-                    <li><img src="{{ vich_uploader_asset(slider, 'imageFile') }}" alt="{{ slider.alt }}"></li>
+                    <li><img src="{{ vich_uploader_asset(slider, 'imageFile') }}" alt="{{ attribute(slider, method)|raw }}"></li>
                 {% endfor %}
             </ul>
             <div style="clear: both;"></div>

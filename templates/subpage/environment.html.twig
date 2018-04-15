@@ -6,11 +6,8 @@
 {% block body %}
     <main>
         <div class="container">
-            <p class="area__text">Podczas pobytu w naszym Gołcińcu zapraszamy do zwiedzenia prastarego i magicznego regionu Świętokrzyskiego. Tutaj w poszukiwaniu sił duchowych mogą Państwo odbyć wędrówkę krajoznawczą do historycznych miejsc będących ogniskami atrakcji, które dają siłę i moc niezapomnianych wrażeń odwiedzającym. none</p>
-            <p class="area__text">Teren całego regionu pokrywają liczne zamki, pałace i dwory (Ujazd, Kurozwęki, Sobków, Chęciny), a bogatą kulturę i historię prezentują interesujące muzea. W swoistą podróż w czasy Staropolskiego Okręgu Przemysłowego przeniosą Państwa doskonale zachowane zabytki techniki, a kontakt z tradycjami i obrzędami ludowymi zapewni m.in. Park Etnograficzny w Tokarni.</p>
-            <p class="area__text">Celem przybliżenia miejsc kultu religijnego proponujemy wyprawę na Święty Krzyż, do Kałkowa-Godowa, szlakiem Cystersów i sanktuariów. Można zajrzeć do ustronnych enklaw ciszy i spokoju, przystanąć obok przydrożnych kapliczek oraz zajrzeć do licznych mniejszych i większych świątyń i kościołów.</p>
-            <p class="area__text">Dzięki bogatej ofercie turystyki moc wrażeń; Tor wyścigowy "Kielce", lotnisko sportowe Masłów, ośrodki jazdy konnej, wyciągi narciarskie oraz ciekawe imprezy plenerowe. Kontakt z piękną i nieskażoną przyrodą zapewnią kilometry szlaków turystycznych pieszych i rowerowych oraz atrakcyjne zbiorniki wodną</p>
-
+            {% set method="text#{ locale }"  %}
+            {{ attribute(text, method)|raw }}
             <h2 class="area__title">Proponujemy odwiedzić:</h2>
         </div>
 
@@ -33,10 +30,13 @@
             <ul class="area__list">
                 {% for image in images %}
                     <li class="area__item">
-                        <h3>{{ image.title }}</h3>
-                        <span>{{ image.time }}</span>
-                        <p>{{ image.text }}</p>
-                        <a href="{{ image.link }}" target="_blank">{{ image.link }}</a>
+                        {% set method="title#{ locale }"  %}
+                        <h3>{{ attribute(image, method)|raw }}</h3>
+                        {% set method="time#{ locale }"  %}
+                        <span>{{ attribute(image, method)|raw }}</span>
+                        {% set method="text#{ locale }"  %}
+                        <p>{{ attribute(image, method)|raw }}</p>
+                        <a href="{{ image.link|raw }}" target="_blank">{{ image.link|raw }}</a>
                     </li>
                 {% endfor %}
             </ul>
