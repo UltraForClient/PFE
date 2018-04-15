@@ -109,7 +109,7 @@ class Price
 
     public function getTextPl(): ?string
     {
-        return $this->textEn;
+        return $this->textPl;
     }
 
     public function setTextEn(string $textEn): void

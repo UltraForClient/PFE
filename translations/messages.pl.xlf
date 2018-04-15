@@ -65,6 +65,11 @@
                 <target>Kontakt</target>
             </trans-unit>
 
+            <trans-unit id="nav.language">
+                <source>nav.language</source>
+                <target>Język</target>
+            </trans-unit>
+
             <trans-unit id="down_nav.contact">
                 <source>down_nav.contact</source>
                 <target>Kontakt</target>

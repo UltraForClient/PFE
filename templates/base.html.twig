@@ -62,8 +62,15 @@
                         <a href="{{ path('home') }}#contact" class="nav__link">{{ 'nav.contact'|trans }}</a>
                     </li>
                     <li class="nav__item">
-                        <a href="http://goscinieceuropejski.pl/en/" class="nav__link">English</a>
-                        <a href="http://goscinieceuropejski.pl/pl/" class="nav__link">Polski</a>
+                        <button class="nav__link" data-toggle="open-submenu">{{ 'nav.language'|trans }} <span class="fas fa-arrow-down"></span></button>
+                        <ul class="nav__submenu submenu">
+                            <li class="submenu__item">
+                                <a href="http://goscinieceuropejski.pl/en/" class="nav__link">English</a>
+                            </li>
+                            <li class="submenu__item">
+                                <a href="http://goscinieceuropejski.pl/pl/" class="nav__link">Polski</a>
+                            </li>
+                        </ul>
                     </li>
                     <div class="arrow-indicator"></div>
                 </ul>
