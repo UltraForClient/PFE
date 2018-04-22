@@ -81,7 +81,7 @@ if(sliderFull.length !== 0) {
 
 const animates = $('.animated');
 if(animates.length !== 0) {
-    for(let i = 0; i < animates.length; i++) {
+    for (let i = 0; i < animates.length; i++) {
         $(animates[i]).waypoint(() => {
             animates[i].classList.add(animates[i].getAttribute('data-animated'));
             $(animates[i]).css('opacity', 1);
@@ -98,7 +98,7 @@ if(sliderFullSpan.length !== 0) {
         sliderFullSpan.animate({
             top: '10vw'
         }, 1500)
-    }, { offset: '80%' });
+    }, {offset: '80%'});
 }
 
 const gridder = $('.gridder');
@@ -128,13 +128,13 @@ const targetLinks = document.querySelectorAll('a[href*="#"]:not([href="#"])');
 if(targetLinks.length > 0) {
     targetLinks.forEach(item => {
         item.addEventListener('click', () => {
-            if (location.pathname.replace(/^\//, '') === item.pathname.replace(/^\//, '') && location.hostname === item.hostname) {
+            if(location.pathname.replace(/^\//, '') === item.pathname.replace(/^\//, '') && location.hostname === item.hostname) {
 
                 let target = $(item.hash);
 
                 target = target.length ? target : $('[name=' + item.hash.slice(1) + ']');
 
-                if (target.length) {
+                if(target.length) {
                     $('html, body').animate({
                         scrollTop: target.offset().top
                     }, 1000);
@@ -144,4 +144,42 @@ if(targetLinks.length > 0) {
             }
         });
     });
+}
+
+function getBrowser() {
+    const ua = navigator.userAgent;
+    let tem;
+    let match = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+
+    if(/trident/i.test(match[1])) {
+        tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+        return {
+            name: 'IE',
+            version: (tem[1] || '')
+        };
+    }
+    if(match[1] === 'Chrome') {
+        tem = ua.match(/\bOPR|Edge\/(\d+)/);
+        if(tem != null) {
+            return {
+                name: 'Opera',
+                version: tem[1]
+            };
+        }
+    }
+    match = match[2] ? [match[1], match[2]] : [navigator.appName, navigator.appVersion, '-?'];
+
+    if((tem = ua.match(/version\/(\d+)/i)) != null)
+        match.splice(1, 1, tem[1]);
+
+    return {
+        name: match[0],
+        version: match[1]
+    };
+}
+
+if(getBrowser().name === 'Safari'){
+
+    const fbTab = document.querySelector('.fb-tab');
+    fbTab.parentNode.removeChild(fbTab);
 }

@@ -267,12 +267,13 @@ button {
 
 .price span {
     position: absolute;
-    bottom: 0;
+    bottom: 5px;
     padding: 20px;
-    background-color: rgba(150, 159, 169, 0.52);
+    background-color: rgba(150,159,169,.52);
     width: calc(100% - 10px);
     text-align: center;
-    color: #ffffff
+    color: #fff;
+    left: 5px;
 }
 
 .relaxation h2 {
@@ -387,6 +388,23 @@ button {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     opacity: 1;
     z-index: 2;
+}
+
+.booking {
+    position: absolute;
+    top: 286px;
+    left: -45px;
+    text-align: center;
+    height: 30px;
+    width: 121px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: block;
+    background-color: #b6823f;
+    letter-spacing: 1px;
+    padding: 5px;
+    transform: rotate(-90deg);
 }
 
 .contact {
@@ -781,11 +799,6 @@ button {
         width: 60%;
         height: 150px;
 
-    }
-
-    .price span {
-        padding: 20px;
-        bottom: 5px;
     }
 
     .screen {

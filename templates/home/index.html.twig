@@ -31,7 +31,7 @@
                 <figure class="price">
                     <img src="{{ vich_uploader_asset(price, 'imageFile') }}" {% set method="alt#{ locale }"  %} alt="{{ attribute(price, method) }}">
                     {% set method="text#{ locale }"  %}
-                    <span>{# {{ attribute(price, method) }} #} {{ price.textPl }}</span>
+                    <span>{{ attribute(price, method) }}</span>
                 </figure>
             {% endfor %}
         </div>

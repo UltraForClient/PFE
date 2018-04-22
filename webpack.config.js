@@ -40,7 +40,7 @@ module.exports = {
                         loader: 'css-loader',
                         options: {
                             minimize: true,
-                            autoprefixer: true
+                            // autoprefixer: true
                         }
                     }]
 
